@@ -1,0 +1,98 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form{
+    width: 95%;
+    height: 100px;
+    background: #e4e4e4;
+    display: flex;
+    justify-content: space-around;;
+    align-items: center;
+    color: #fff;
+    margin: 8px;
+    border-radius: 8px;
+}
+input[type=text]{
+    border: 1px solid #d1d1d1;
+    font-size: 24px;
+    padding: 6px;
+    margin: 16px;
+    border-radius: 8px;
+    width: 70%;
+}
+input[type=submit]{
+    background: #6c0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.tasks{
+    background: #e4e4e4;
+    width: 95%;
+    height: auto;
+    margin: 15px;
+    border-radius: 8px;
+    border: 1px solid #d1d1d1;
+}
+.tasks div{
+    display: flex;
+    margin: 14px;
+    padding :14px;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    background: #fff
+}
+
+.input:focus {
+    outline: none;
+}
+
+.add {
+    border: none;
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tasks .tasks:not(:last-child){
+    margin-bottom: 15px;
+}
+
+.tasks .task:hover{
+    background-color: #f7f7f7;
+}
+.tasks .task.done{
+    opacity: .5;
+}
+.tasks .task span{
+    font-weight: bold;
+    font-size:10px;
+    background-color: red;
+    color: #fff;
+    padding:2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+button{
+    float: right;
+    background-color: red;
+    color:#fff;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 40px;
+    /* display: none; */
+}
