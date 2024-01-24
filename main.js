@@ -1,7 +1,9 @@
 let input = document.querySelector(".input");
 let submit = document.querySelector(".add");
 let tasks_div = document.querySelector(".tasks");
-let delAllBtn = document.querySelector("button")
+let delAllBtn = document.querySelector("button");
+let deleteAllBTN = document.getElementById('deleteAll');
+
 
 let arrTasks = [];
 
@@ -19,15 +21,15 @@ submit.onclick = () => {
     }
 };
 
-
-function deleteAll() {
-    if (arrTasks.length > 0) {
-        delAllBtn.style.display = 'block';
+deleteAll = () => {
+    alert("all tasks deleted, are you sure? ")
+    localStorage.clear();
+     if (arrTasks.length > 0) {
+        deleteAllBTN.innerHTML=` <button onclick='deleteAll()'>Delete All ${arrTasks.length}</button> `
     } else {
-        delAllBtn.style.display = 'none';
+        deleteAllBTN.innerHTML = ``;
     }
 }
-
 
 tasks_div.addEventListener("click", (e) => {
     if (e.target.classList.contains("del")) {
@@ -92,7 +94,6 @@ function getDatalclstg() {
 function dltTaskBID(taskId) {
     arrTasks = arrTasks.filter((task) => task.id != taskId);
     addTskTolclStg(arrTasks);
-
   // For Explain Only
   // for (let i = 0; i < arrayOfTasks.length; i++) {
   //   console.log(`${arrayOfTasks[i].id} === ${taskId}`);
@@ -106,10 +107,4 @@ function tglTask(taskId) {
     }
   }
   addTskTolclStg(arrTasks);
-
-}
-
-function deleteAll() {
-    tasks_div.innerHTML = "";
-    window.localStorage.removeItem("tasks");
 }
